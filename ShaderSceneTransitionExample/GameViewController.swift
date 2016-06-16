@@ -21,7 +21,7 @@ class GameViewController: UIViewController {
         skView.ignoresSiblingOrder = true
         
         /* Set the scale mode to scale to fit the window */
-        var scene = GameScene(size: skView.bounds.size)
+        let scene = GameScene(size: skView.bounds.size)
         scene.scaleMode = .AspectFill
         skView.presentScene(scene)
         skView.backgroundColor = SKColor.whiteColor()
@@ -31,11 +31,11 @@ class GameViewController: UIViewController {
         return true
     }
 
-    override func supportedInterfaceOrientations() -> Int {
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
+            return UIInterfaceOrientationMask.AllButUpsideDown
         } else {
-            return Int(UIInterfaceOrientationMask.All.rawValue)
+            return UIInterfaceOrientationMask.All
         }
     }
 }

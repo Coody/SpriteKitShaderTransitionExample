@@ -39,7 +39,7 @@ class GameScene: SKScene {
         })
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.presentScene(GameScene2(size: self.size), shaderName: "retro_transition_fade_from_top.fsh", transitionDuration: 1.0)
     }
    
